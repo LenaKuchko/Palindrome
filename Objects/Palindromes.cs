@@ -5,6 +5,12 @@ namespace Palindromes.Objects
 {
   public class Palindrome
   {
+    public string RemoveSpaces(string userInput)
+    {
+      userInput = userInput.Replace(" ", String.Empty);
+      Console.WriteLine(userInput);
+      return userInput;
+    }
     public string ReverseString(string userInput)
     {
       char[] array = new char[userInput.Length];

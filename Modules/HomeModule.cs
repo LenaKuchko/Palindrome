@@ -12,9 +12,13 @@ namespace Palindromes
         return View["index.cshtml"];
       };
       Post["/"] = _ => {
-        // inputString CheckString = new inputString();
-        // string result = CheckString.IsItAPalindrome(Request.Form["palindromesTest"]);
-        return View["index.cshtml"];
+        Palindrome input = new Palindrome();
+        string userInput = Request.Form["palindromeTest"];
+        userInput = input.RemoveSpaces(userInput);
+        string result = input.RemoveSpaces(userInput);
+        result = input.ReverseString(userInput);
+        bool palindrome = input.IsPalindrome(userInput, result);
+        return View["index.cshtml", palindrome];
       };
     }
   }
