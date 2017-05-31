@@ -21,5 +21,13 @@ namespace Palindromes
       bool isPalindrome = instance.IsPalindrome("anna", testString);
       Assert.Equal(true, isPalindrome);
     }
+    [Fact]
+    public void IsNotPalindrome_true()
+    {
+      Palindrome instance = new Palindrome();
+      string testString = instance.ReverseString("argyle");
+      bool isPalindrome = instance.IsPalindrome("argyle", testString);
+      Assert.Equal(false, isPalindrome);
+    }
   }
 }
